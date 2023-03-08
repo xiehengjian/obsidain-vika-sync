@@ -26,6 +26,7 @@ interface MyDatasheet{
 
 interface VikaPluginSettings {
 	token: string;
+    host: string;
 	datasheetList: Array<MyDatasheet>;
 }
 
@@ -34,7 +35,7 @@ class MyVika {
     vika: Vika;
     datasheetList: Array<MyDatasheet>;
     constructor(settings: VikaPluginSettings) {
-        this.vika = new Vika({ token: settings.token });
+        this.vika = new Vika({ token: settings.token,host:"http://127.0.0.1/fusion/v1"});
         this.datasheetList = settings.datasheetList;
     }
 

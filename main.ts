@@ -5,6 +5,7 @@ import { MyNote, MyObsidian } from "utils/obsidian";
 
 const DEFAULT_SETTINGS: VikaPluginSettings = {
 	"token": "",
+	"host":"",
 	"datasheetList": []
 }
 
@@ -143,7 +144,7 @@ class SettingTab extends PluginSettingTab {
 		containerEl.empty();
 
 		containerEl.createEl('h1', {text: 'Vika Sync Settings'});
-		
+		// token
 		new Setting(containerEl)
 			.setName('Token')
 			.setDesc("从Vika的API设置中获取")
